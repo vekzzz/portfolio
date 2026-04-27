@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-serif: 'Instrument Serif', serif;
+}
+
+@theme inline {
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-bg: var(--bg);
+  --color-bg2: var(--bg-2);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line2: var(--line-2);
+  --color-chip: var(--chip);
+  --color-green: #31c48d;
+}
+
+:root {
+  --accent: #ff5b2e;
+  --accent-ink: #0a0a0a;
+  --bg: #f6f5f1;
+  --bg-2: #ecebe5;
+  --surface: #ffffff;
+  --ink: #0a0a0a;
+  --ink-2: #1f1f1f;
+  --muted: #6a6a6a;
+  --line: #d9d7cf;
+  --line-2: #c8c6bd;
+  --chip: #ebeae3;
+}
+
+html[data-theme='dark'] {
+  --bg: #0c0c0d;
+  --bg-2: #111113;
+  --surface: #141416;
+  --ink: #f2f2ee;
+  --ink-2: #e0e0d8;
+  --muted: #8a8a84;
+  --line: #232326;
+  --line-2: #2c2c30;
+  --chip: #1a1a1d;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+@keyframes marquee-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes status-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-marquee {
+  animation: marquee-scroll 40s linear infinite;
+}
+
+.animate-pulse-dot {
+  animation: status-pulse 2s infinite;
+}
