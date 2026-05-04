@@ -5,8 +5,7 @@ type Theme = 'light' | 'dark'
 export function useTheme() {
   const [theme, setTheme] = useState<Theme>(() => {
     const stored = localStorage.getItem('veks-theme') as Theme | null
-    if (stored) return stored
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+    return stored ?? 'dark'
   })
 
   useEffect(() => {

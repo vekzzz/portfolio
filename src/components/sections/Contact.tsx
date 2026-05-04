@@ -10,7 +10,7 @@ const contactInfo = [
 export function Contact() {
   return (
     <section id="contact" style={{ padding: '120px 0' }}>
-      <div className="max-w-[1360px] mx-auto px-10 max-md:px-5">
+      <div className="max-w-[1360px] mx-auto px-14 max-md:px-5">
         <FadeIn>
           <div
             className="border rounded-[20px] relative overflow-hidden grid grid-cols-[1.2fr_1fr] gap-16 items-center max-md:grid-cols-1 max-md:gap-8"

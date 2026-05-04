@@ -12,6 +12,12 @@
     <title>Veks Dev — Web Developer</title>
   </head>
   <body>
+    <script>
+      (function () {
+        var t = localStorage.getItem('veks-theme')
+        document.documentElement.setAttribute('data-theme', t || 'dark')
+      })()
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

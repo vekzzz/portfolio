@@ -4,7 +4,7 @@ interface TagProps {
 
 export function Tag({ children }: TagProps) {
   return (
-    <span className="font-mono text-[11px] text-muted px-2 py-0.5 border border-line rounded-full">
+    <span className="font-mono text-[11px] text-muted px-2 py-0.5 border border-line2 rounded-full">
       {children}
     </span>
   )

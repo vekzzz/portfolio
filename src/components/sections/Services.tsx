@@ -5,24 +5,24 @@ import { motion } from 'framer-motion'
 
 const icons: Record<string, React.ReactNode> = {
   grid: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" />
     </svg>
   ),
   browser: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <path d="M3 5h18v14H3z" />
       <path d="M3 9h18M7 13h6" />
     </svg>
   ),
   'circle-plus': (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <circle cx="12" cy="12" r="8" />
       <path d="M12 4v16M4 12h16" />
     </svg>
   ),
   'trending-up': (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <path d="M3 17l6-6 4 4 8-8" />
       <path d="M14 7h7v7" />
     </svg>
@@ -31,8 +31,8 @@ const icons: Record<string, React.ReactNode> = {
 
 export function Services() {
   return (
-    <section id="services" className="border-b" style={{ padding: '120px 0', borderColor: 'var(--line)' }}>
-      <div className="max-w-[1360px] mx-auto px-10 max-md:px-5">
+    <section id="services" className="border-b" style={{ padding: '96px 0', borderColor: 'var(--line)' }}>
+      <div className="max-w-[1360px] mx-auto px-14 max-md:px-5">
         <FadeIn>
           <SectionHead
             index="§ 04"
@@ -49,41 +49,60 @@ export function Services() {
           />
         </FadeIn>
 
-        <Stagger className="grid grid-cols-2 gap-6 max-md:grid-cols-1">
+        <Stagger
+          className="grid grid-cols-2 max-md:grid-cols-1"
+          style={{
+            gap: '1px',
+            background: 'var(--line)',
+            border: '1px solid var(--line)',
+            borderRadius: '10px',
+            overflow: 'hidden',
+          }}
+        >
           {services.map((svc) => (
             <motion.div
               key={svc.index}
               variants={staggerChild}
-              className="relative overflow-hidden rounded-[14px] border p-8 transition-all duration-[250ms]"
-              style={{ background: 'var(--surface)', borderColor: 'var(--line)' }}
-              whileHover={{ borderColor: 'var(--ink)' } as Record<string, string>}
+              className="transition-colors duration-200"
+              style={{ padding: '36px 32px', background: 'var(--bg)' }}
+              onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--surface)')}
+              onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--bg)')}
             >
-              <div className="flex justify-between items-start mb-10">
-                <div className="font-mono text-xs" style={{ color: 'var(--muted)' }}>
+              <div className="flex justify-between items-start" style={{ marginBottom: '36px' }}>
+                <div
+                  className="font-mono text-[10px] uppercase"
+                  style={{ letterSpacing: '0.08em', color: 'var(--muted)' }}
+                >
                   {svc.index}
                 </div>
                 <div
-                  className="w-12 h-12 border rounded-[10px] grid place-items-center"
-                  style={{ borderColor: 'var(--line)', background: 'var(--bg-2)', color: 'var(--ink)' }}
+                  className="w-11 h-11 border rounded-[8px] grid place-items-center"
+                  style={{ borderColor: 'var(--line-2)', background: 'var(--bg-2)', color: 'var(--ink-2)' }}
                 >
                   {icons[svc.icon]}
                 </div>
               </div>
 
-              <h3 className="text-2xl font-medium mb-2.5 m-0" style={{ letterSpacing: '-0.02em' }}>
+              <h3
+                className="font-medium m-0 mb-2.5"
+                style={{ fontSize: '22px', letterSpacing: '-0.025em' }}
+              >
                 {svc.title}
               </h3>
-              <p className="mb-6 text-sm leading-[1.6] m-0" style={{ color: 'var(--muted)' }}>
+              <p
+                className="text-[13px] leading-[1.65] m-0"
+                style={{ color: 'var(--muted)', marginBottom: '20px' }}
+              >
                 {svc.description}
               </p>
 
               <div
-                className="font-mono text-xs grid gap-2 pt-4"
-                style={{ borderTop: '1px dashed var(--line)', color: 'var(--ink)' }}
+                className="font-mono text-[11px] grid gap-1.5 pt-4"
+                style={{ borderTop: '1px dashed var(--line-2)', color: 'var(--ink-2)' }}
               >
                 {svc.features.map((feat) => (
-                  <span key={feat} className="flex gap-2.5">
-                    <span style={{ color: 'var(--accent)' }}>→</span>
+                  <span key={feat}>
+                    <span style={{ color: 'var(--accent)' }}>→ </span>
                     {feat}
                   </span>
                 ))}

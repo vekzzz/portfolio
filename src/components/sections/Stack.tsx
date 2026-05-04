@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 export function Stack() {
   return (
     <section id="stack" className="border-b" style={{ padding: '120px 0', borderColor: 'var(--line)' }}>
-      <div className="max-w-[1360px] mx-auto px-10 max-md:px-5">
+      <div className="max-w-[1360px] mx-auto px-14 max-md:px-5">
         <FadeIn>
           <SectionHead
             index="§ 02"

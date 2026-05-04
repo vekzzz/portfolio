@@ -4,7 +4,7 @@ export function StatusBar() {
       className="border-b font-mono text-[11px] text-muted"
       style={{ borderColor: 'var(--line)', background: 'var(--bg-2)' }}
     >
-      <div className="max-w-[1360px] mx-auto px-10 max-md:px-5 grid grid-cols-3 gap-6 h-7 items-center">
+      <div className="max-w-[1360px] mx-auto px-14 max-md:px-5 grid grid-cols-3 gap-6 h-7 items-center">
         <span>loc · remote / UTC+1 · en_US</span>
         <span className="text-center flex items-center justify-center gap-2" style={{ color: 'var(--ink)' }}>
           <span

@@ -14,39 +14,46 @@ export function Nav() {
 
   return (
     <motion.nav
-      initial={{ opacity: 0, y: -8 }}
+      initial={{ opacity: 0, y: -6 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className="sticky top-0 z-40 border-b"
       style={{
-        backdropFilter: 'saturate(140%) blur(10px)',
-        WebkitBackdropFilter: 'saturate(140%) blur(10px)',
-        background: 'color-mix(in oklab, var(--bg) 82%, transparent)',
+        height: '52px',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        background: 'color-mix(in oklab, var(--bg) 90%, transparent)',
         borderColor: 'var(--line)',
       }}
     >
-      <div className="max-w-[1360px] mx-auto px-10 max-md:px-5 flex items-center justify-between h-16">
-        <a href="#" className="flex items-center gap-2.5 font-mono font-semibold" style={{ letterSpacing: '-0.01em' }}>
+      <div className="max-w-[1360px] mx-auto px-14 max-md:px-5 flex items-center justify-between h-full">
+        <a
+          href="#"
+          className="flex items-center gap-2.5 font-mono text-[12px]"
+          style={{ letterSpacing: '-0.01em', color: 'var(--ink)' }}
+        >
           <span
-            className="w-[22px] h-[22px] grid place-items-center text-xs font-semibold rounded-[4px]"
-            style={{ background: 'var(--ink)', color: 'var(--bg)', fontFamily: 'var(--font-mono)' }}
+            className="w-[22px] h-[22px] grid place-items-center text-[11px] font-semibold rounded-[3px]"
+            style={{ background: 'var(--ink)', color: 'var(--bg)' }}
           >
             V
           </span>
-          <span>veks.dev</span>
+          veks.dev
         </a>
 
-        <div className="hidden md:flex gap-7 font-mono text-[13px]" style={{ color: 'var(--muted)' }}>
+        <div className="hidden md:flex gap-9 font-mono text-[11px]" style={{ letterSpacing: '0.02em', color: 'var(--muted)' }}>
           {navLinks.map(({ href, label }) => (
             <a
               key={href}
               href={href}
-              className="relative transition-colors duration-200 group"
-              style={{ color: 'inherit' }}
+              className="relative transition-colors duration-150 group"
               onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--ink)')}
               onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--muted)')}
             >
-              <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-200" style={{ color: 'var(--accent)' }}>
+              <span
+                className="opacity-0 group-hover:opacity-100 transition-opacity duration-150"
+                style={{ color: 'var(--accent)' }}
+              >
                 {'// '}
               </span>
               {label}
@@ -54,14 +61,14 @@ export function Nav() {
           ))}
         </div>
 
-        <div className="flex items-center gap-3.5 font-mono text-[13px]">
+        <div className="flex items-center gap-3">
           <button
             onClick={toggleTheme}
-            className="inline-flex items-center gap-2 border rounded-full px-2.5 py-1.5 text-xs transition-all duration-200"
-            style={{ borderColor: 'var(--line)', color: 'var(--muted)' }}
+            className="font-mono text-[10px] border px-2.5 py-1 transition-all duration-150"
+            style={{ borderColor: 'var(--line)', color: 'var(--muted)', letterSpacing: '0.06em' }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = 'var(--ink)'
-              e.currentTarget.style.color = 'var(--ink)'
+              e.currentTarget.style.borderColor = 'var(--line-2)'
+              e.currentTarget.style.color = 'var(--ink-2)'
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.borderColor = 'var(--line)'
@@ -69,17 +76,28 @@ export function Nav() {
             }}
             aria-label="Toggle theme"
           >
-            <span className="w-2 h-2 rounded-full" style={{ background: 'var(--accent)' }} />
-            <span>{theme}</span>
+            {theme}
           </button>
 
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 text-xs rounded-full px-3.5 py-2 font-mono transition-transform duration-200 hover:-translate-y-px"
-            style={{ background: 'var(--ink)', color: 'var(--bg)' }}
+            className="font-mono text-[11px] border transition-all duration-150"
+            style={{
+              padding: '7px 18px',
+              border: '1px solid var(--accent)',
+              color: 'var(--accent)',
+              letterSpacing: '0.04em',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'var(--accent)'
+              e.currentTarget.style.color = 'var(--bg)'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'transparent'
+              e.currentTarget.style.color = 'var(--accent)'
+            }}
           >
-            hire me{' '}
-            <span style={{ opacity: 0.7 }}>↗</span>
+            hire me ↗
           </a>
         </div>
       </div>

@@ -14,6 +14,7 @@ import { Contact } from '@/components/sections/Contact'
 export default function App() {
   return (
     <>
+      <div className="grid-bg" />
       <Nav />
       <StatusBar />
       <Hero />

@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 export function Experience() {
   return (
     <section id="experience" className="border-b" style={{ padding: '120px 0', borderColor: 'var(--line)' }}>
-      <div className="max-w-[1360px] mx-auto px-10 max-md:px-5">
+      <div className="max-w-[1360px] mx-auto px-14 max-md:px-5">
         <FadeIn>
           <SectionHead
             index="§ 03"

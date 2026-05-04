@@ -21,30 +21,31 @@
   --color-green: #31c48d;
 }
 
+/* Default: dark — ICE palette */
 :root {
-  --accent: #ff5b2e;
-  --accent-ink: #0a0a0a;
-  --bg: #f6f5f1;
-  --bg-2: #ecebe5;
-  --surface: #ffffff;
-  --ink: #0a0a0a;
-  --ink-2: #1f1f1f;
-  --muted: #6a6a6a;
-  --line: #d9d7cf;
-  --line-2: #c8c6bd;
-  --chip: #ebeae3;
+  --accent: #00C8D4;
+  --accent-ink: #060A0D;
+  --bg: #060A0D;
+  --bg-2: #0C1318;
+  --surface: #101820;
+  --ink: #D4E8F4;
+  --ink-2: #8AAABB;
+  --muted: #3D5666;
+  --line: #152030;
+  --line-2: #1E2F40;
+  --chip: #0C1318;
 }
 
-html[data-theme='dark'] {
-  --bg: #0c0c0d;
-  --bg-2: #111113;
-  --surface: #141416;
-  --ink: #f2f2ee;
-  --ink-2: #e0e0d8;
-  --muted: #8a8a84;
-  --line: #232326;
-  --line-2: #2c2c30;
-  --chip: #1a1a1d;
+html[data-theme='light'] {
+  --bg: #EEF4F8;
+  --bg-2: #E2EBF2;
+  --surface: #F8FBFD;
+  --ink: #0A1520;
+  --ink-2: #2A4055;
+  --muted: #6A8899;
+  --line: #C0D0DC;
+  --line-2: #AEC0CC;
+  --chip: #E2EBF2;
 }
 
 *,
@@ -85,24 +86,32 @@ button {
   cursor: pointer;
 }
 
+/* Fixed grid overlay — rendered once in App */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(to right, var(--line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.65;
+  mask-image: radial-gradient(ellipse 75% 55% at 15% 25%, #000 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 55% at 15% 25%, #000 0%, transparent 70%);
+}
+
 @keyframes marquee-scroll {
-  to {
-    transform: translateX(-50%);
-  }
+  to { transform: translateX(-50%); }
 }
 
 @keyframes status-pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
 }
 
 .animate-marquee {
-  animation: marquee-scroll 40s linear infinite;
+  animation: marquee-scroll 36s linear infinite;
 }
 
 .animate-pulse-dot {

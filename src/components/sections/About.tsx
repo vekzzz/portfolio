@@ -9,7 +9,7 @@ const sideInfo = [
 export function About() {
   return (
     <section id="about" className="border-b" style={{ padding: '120px 0', borderColor: 'var(--line)' }}>
-      <div className="max-w-[1360px] mx-auto px-10 max-md:px-5">
+      <div className="max-w-[1360px] mx-auto px-14 max-md:px-5">
         <div className="grid grid-cols-[200px_1fr_360px] gap-16 max-md:grid-cols-1 max-md:gap-8">
           <FadeIn direction="none">
             <div className="flex gap-2.5 items-center font-mono text-xs pt-1" style={{ color: 'var(--muted)' }}>
