@@ -1,3 +1,4 @@
+import { ChatBot } from '@/components/ui/ChatBot'
 import { Nav } from '@/components/layout/Nav'
 import { StatusBar } from '@/components/layout/StatusBar'
 import { Footer } from '@/components/layout/Footer'
@@ -27,6 +28,7 @@ export default function App() {
       <Projects />
       <Contact />
       <Footer />
+      <ChatBot />
     </>
   )
 }

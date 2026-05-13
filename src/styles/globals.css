@@ -117,3 +117,9 @@ button {
 .animate-pulse-dot {
   animation: status-pulse 2s infinite;
 }
+
+/* ChatBot input placeholder */
+input::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
